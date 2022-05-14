@@ -1,0 +1,66 @@
+@import '~antd/dist/antd.css';
+
+@bgcolor:#efefef;
+
+body{
+  font-size: 14px;
+  color: #333;
+  font-family: '微软雅黑';
+  background-color: @bgcolor;
+}
+
+header{
+  height: 64px;
+  background-color: #fff;
+  padding: 0 50px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+footer{
+  height: 70px;
+  color: #fff;
+  text-align: center;
+  line-height: 70px;
+  background-color: #001529;
+}
+
+#app{
+  height: 100vh;
+}
+
+#app .logo{
+  height: 50px;
+  width: 230px;
+}
+
+#app .avatar{
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+}
+
+header .decline{
+  padding-bottom: 22px;
+  color: #333;
+  &:hover{
+    color: #1890ff;
+  }
+}
+
+.aside{
+  height: calc(100vh - 134px);
+}
+
+.container{
+  display: flex;
+  justify-content: space-between;
+}
+.container_box{
+  height: 100%;
+  padding-bottom: 20px;
+}
+.ant-layout-content{
+  padding:20px ;
+}
