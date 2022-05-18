@@ -17,6 +17,7 @@ const BaseRouter = ()=> (
     <Routes>
       <Route path="/" element={<App/>}>
         <Route path="/edit" element={<Edit/>}></Route>
+        <Route path="/edit/:id" element={<Edit/>}></Route>
         <Route path="/list" element={<List/>}></Route>
         <Route path="/means" element={<Means/>}></Route>
       </Route>

@@ -20,7 +20,7 @@ export default function Header() {
     if(avatar1){
       setAvatar('http://47.93.114.103:6688/' + avatar1)
     }
-  },[]);
+  },[localStorage.getItem('avatar')]);
 
   // 退出登录
   const logout = ()=>{
@@ -31,7 +31,7 @@ export default function Header() {
 
   const menu = (
     <Menu>
-      <Menu.Item key={1}>修改资料</Menu.Item>
+      <Menu.Item key={1} onClick={()=>navigate('/means')}>修改资料</Menu.Item>
       <Menu.Divider/>
       <Menu.Item key={2} onClick={logout}>退出登录</Menu.Item>
     </Menu>
