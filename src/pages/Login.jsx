@@ -1,7 +1,7 @@
 import React from 'react'
 import { Form, Input, Button,message } from 'antd';
 import './less/Login.less'
-import logoImg from '../assets/logo.png'
+import study from '../assets/study.webp'
 import { Link,useNavigate } from 'react-router-dom'
 import Register from './Register';
 import { UserOutlined, LockOutlined } from '@ant-design/icons';
@@ -36,7 +36,8 @@ export default function Login() {
   return (
     <div className="login">
       <div className='login_box' >
-        <img src={logoImg} alt='' />
+        {/* <img src={study} alt='' style={{width:'300px',height:'100px'}}/> */}
+        <h1>用户登录</h1>
         <Form 
           name="basic"
           initialValues={{

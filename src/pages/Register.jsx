@@ -29,7 +29,8 @@ export default function Register() {
   return (
     <div className="login">
       <div className='login_box' >
-        <img src={logoImg} alt='' />
+        {/* <img src={logoImg} alt='' /> */}
+        <h1>用户注册</h1>
         <Form
           name="basic"
           initialValues={{

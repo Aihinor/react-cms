@@ -1,15 +1,15 @@
-import React,{useState,useEffect} from 'react'
+import React, { useState, useEffect } from 'react'
 import { Breadcrumb } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
 import { useLocation } from 'react-router-dom';
 
 export default function Bread() {
 
-  const {pathname} = useLocation()
-  const [breadName,setBreadName] = useState('')
+  const { pathname } = useLocation()
+  const [breadName, setBreadName] = useState('')
 
-  useEffect(()=>{
-    switch(pathname){
+  useEffect(() => {
+    switch (pathname) {
       case '/list':
         setBreadName('查看文章列表');
         break;
@@ -19,11 +19,17 @@ export default function Bread() {
       case '/means':
         setBreadName('修改资料')
         break;
+      case '/upload':
+        setBreadName('上传文件')
+        break;
+      case '/show':
+        setBreadName('文件展示')
+        break;
       default:
         setBreadName(pathname.includes('edit') ? '文章编辑' : null)
         break;
     }
-  },[pathname])
+  }, [pathname])
 
   return (
     <Breadcrumb>

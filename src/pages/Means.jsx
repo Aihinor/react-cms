@@ -4,6 +4,7 @@ import { Form, Input, Button, Upload, message } from 'antd';
 import { GetUserDataApi, ChangeUserDataApi } from '../request/api'
 import { useNavigate } from 'react-router-dom'
 import { LoadingOutlined, PlusOutlined } from '@ant-design/icons';
+import { connect } from 'react-redux';
 
 // 将图片路径转base64
 function getBase64(img, callback) {
@@ -27,7 +28,7 @@ function beforeUpload(file) {
 
 // const [imageUrl,setImageUrl] = useState()
 
-export default function Means() {
+function Means(props) {
 
   const [loading, setLoading] = useState(false)
   const [imageUrl, setImageUrl] = useState('')
@@ -48,7 +49,8 @@ export default function Means() {
         setImageUrl(imageUrl)
         // 存储图片名称
         localStorage.setItem('avatar',info.file.response.data.filePath)
-        window.location.reload() // 强制页面刷新
+        // window.location.reload() // 强制页面刷新
+        props.addKey()
       }
       );
     }
@@ -123,3 +125,13 @@ export default function Means() {
     </div>
   )
 }
+
+const mapDispatchToProps =(dispatch)=>{
+  return {
+    addKey(){
+      const action = {type:'addKeyFn'}
+      dispatch(action)
+    }
+  }
+}
+export default connect(null,mapDispatchToProps)(Means)

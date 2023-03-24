@@ -5,13 +5,14 @@ import { Layout } from 'antd';
 import Header from './components/Header';
 import Aside from './components/Aside';
 import Bread from './components/Bread';
+import { connect } from 'react-redux';
 
 const { Content } = Layout;
 
-export default function App() {
+function App(props) {
   return (
     <Layout id='app'>
-      <Header />
+      <Header key={props.mykey} />
       <div className='container'>
         <Aside/>
         <Content>
@@ -25,3 +26,10 @@ export default function App() {
     </Layout>
   )
 }
+
+const mapStateToProps = (state)=>{
+  return {
+    mykey:state.mykey
+  }
+}
+export default connect(mapStateToProps)(App)
